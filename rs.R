@@ -14,18 +14,14 @@ arrangeDeviceBrand <- function (){
         if(length(rl) == 0) break
         
         #以空格分割
-        # cl <- strsplit(rl, ' ')[[1]]
-        # if(length(cl) > 3){
-        #     r <- paste(ee[1], paste(ee[c(2:(length(cl)-1))], collapse = '_'), ee[length(cl)], sep=' ')
-        #     # print(paste(ee[c(2:length(cl)-1)], sep=' ', collapse = ' '))
-        # }
-        # else {
-        #     r <- rl
-        #     # print(rl)
-        # }
-        #写入文件
-        r <- rl
-        writeLines(r, newFileBrand, sep='\n')
+        cl <- strsplit(rl, ' ')[[1]]
+        if(length(cl) > 3){
+            
+            
+            rl <- paste(cl[1], paste(cl[c(2:(length(cl)-1))], collapse = '_'), cl[length(cl)], sep=' ')
+        
+        }
+        writeLines(rl, newFileBrand, sep='\n')
     }
     close(newFileBrand)
     close(fileBrand)
