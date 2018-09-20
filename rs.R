@@ -2,7 +2,7 @@
 #setwd('F:\\study\\tinymind\\data')
 setwd('G:\\tinymind\\data')
 
-#¶ÁÈ¡ÎÄ¼ş£¬°´ĞĞÊı
+#??È¡?Ä¼?????????
 readFileByLines<-function(fileName, lines=5){
     
     
@@ -13,7 +13,7 @@ readFileByLines<-function(fileName, lines=5){
 #readFileByLines('deviceid_brand.tsv', 1)
 
 #brand
-#¶ÔÆ·ÅÆÎÄ¼ş´¦Àí£¬Èç¹ûÓĞËÄÁĞ£¬ÖĞ¼äÁ½ÁĞÒªºÏ²¢
+#??Æ·???Ä¼????ï¿½ï¿½ï¿½?????????Ğ£??Ğ¼?ï¿½ï¿½??Òª?Ï²?
 arrangeDeviceBrand <- function (){
     newFileBrand <- file('deviceid_brand_new.tsv', 'w', encoding = 'UTF-8')
     
@@ -23,7 +23,7 @@ arrangeDeviceBrand <- function (){
         rl <- readLines(fileBrand, n=1)   
         if(length(rl) == 0) break
         
-        #ÒÔ¿Õ¸ñ·Ö¸î
+        #?Ô¿Õ¸??Ö¸?
         cl <- strsplit(rl, ' ')[[1]]
         if(length(cl) > 3){
             
@@ -39,13 +39,20 @@ arrangeDeviceBrand <- function (){
 
 arrangeDeviceBrand()
 
-#Æ·ÅÆÊı¾İ
+#Æ·??????
 # brandData<-read.table('deviceid_brand_new.tsv', sep=' ',encoding='utf8',header=F)
 
 
 readFileByLines('deviceid_test.tsv')
 readFileByLines('deviceid_train.tsv')
 
+
+
+
+train<-read.table('deviceid_train.tsv', sep='\t',encoding='utf8',header=F, col.names = c('deviceId','sex','sec'))
+summary(train)
+head(train)
+summary(duplicated(train$deviceId))
 
 
 
