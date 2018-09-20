@@ -2,6 +2,16 @@
 #setwd('F:\\study\\tinymind\\data')
 setwd('G:\\tinymind\\data')
 
+#读取文件，按行数
+readFileByLines<-function(fileName, lines=5){
+    
+    
+    f<-file(fileName, 'r', encoding = 'UTF-8')
+    print(readLines(f, n=lines))
+}
+
+#readFileByLines('deviceid_brand.tsv', 1)
+
 #brand
 #对品牌文件处理，如果有四列，中间两列要合并
 arrangeDeviceBrand <- function (){
@@ -29,25 +39,14 @@ arrangeDeviceBrand <- function (){
 
 arrangeDeviceBrand()
 
+#品牌数据
+# brandData<-read.table('deviceid_brand_new.tsv', sep=' ',encoding='utf8',header=F)
+
+
+readFileByLines('deviceid_test.tsv')
+readFileByLines('deviceid_train.tsv')
 
 
 
-
-
-dd <- "8d470dc6253176a1194b31a0a3c23c65 Huawei HUAWEI G660-L075"  
-
-ee <- strsplit(dd, ' ')[[1]]
-ee[c(2:3)]
-paste(c(2:3), sep='_')
-paste(ee[c(2:(length(ee) - 1))], collapse = '_')
-
-
-?paste
-print(1)
-
-?file
-?readLines
-
-# brandData<-read.table('deviceid_brand.tsv', sep=' ',encoding='utf8',header=F)
 
 
