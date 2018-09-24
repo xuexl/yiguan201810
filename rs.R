@@ -2,7 +2,6 @@
 #setwd('F:\\study\\tinymind\\data')
 setwd('G:\\tinymind\\data')
 
-#??ȡ?ļ?????????
 readFileByLines<-function(fileName, lines=5){
     
     
@@ -13,7 +12,6 @@ readFileByLines<-function(fileName, lines=5){
 #readFileByLines('deviceid_brand.tsv', 1)
 
 #brand
-#??Ʒ???ļ????���?????????У??м?��??Ҫ?ϲ?
 arrangeDeviceBrand <- function (){
     newFileBrand <- file('deviceid_brand_new.tsv', 'w', encoding = 'UTF-8')
     
@@ -37,22 +35,49 @@ arrangeDeviceBrand <- function (){
     close(fileBrand)
 }
 
-arrangeDeviceBrand()
+#arrangeDeviceBrand()
 
-#Ʒ??????
-# brandData<-read.table('deviceid_brand_new.tsv', sep=' ',encoding='utf8',header=F)
+#device and app
+arrangeDeviceAndApp<-function(){
+    
+    
+    
+}
+
+#get device and app factor 
+getDeviceAndAppFactor<-function(){
+    
+    
+    # read.table('')
+    
+    return()
+}
 
 
-readFileByLines('deviceid_test.tsv')
-readFileByLines('deviceid_train.tsv')
+#statistics package start and close data
+calculatePackagesUsedStatus<-function(){
+    result<-NULL
+    
+    device_app_factor<-getDeviceAndAppFactor()
+    
+    bat<-0
+    step<-100000
+    repeat{
+        batData<-read.table('deviceid_package_start_close.tsv', skip=bat, header=FALSE, sep='\t')
+        len<-length(batData)
+        if(len==0) next
+        
+        resultData<-NULL
+        
+        
+        
+        if(len<step) break
+        bat<-bat + step
+    }
+    
+    return()
+}
 
-
-
-
-train<-read.table('deviceid_train.tsv', sep='\t',encoding='utf8',header=F, col.names = c('deviceId','sex','sec'))
-summary(train)
-head(train)
-summary(duplicated(train$deviceId))
 
 
 
