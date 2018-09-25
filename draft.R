@@ -6,7 +6,7 @@ readFileByLines('deviceid_test.tsv')
 readFileByLines('deviceid_train.tsv')
 readFileByLines('deviceid_packages.tsv',1)
 readFileByLines('deviceid_package_start_close.tsv',2)
-
+readFileByLines('package_label.tsv')
 
 
 train<-read.table('deviceid_train.tsv', sep='\t',encoding='utf8',header=F, col.names = c('deviceId','sex','sec'))

@@ -21,7 +21,6 @@ arrangeDeviceBrand <- function (){
         rl <- readLines(fileBrand, n=1)   
         if(length(rl) == 0) break
         
-        #?Կո??ָ?
         cl <- strsplit(rl, ' ')[[1]]
         if(length(cl) > 3){
             
